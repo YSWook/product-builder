@@ -1,6 +1,12 @@
-const themeToggleButton = document.getElementById('theme-toggle');
-const body = document.body;
+const generateButton = document.getElementById('generate');
+const resultDiv = document.getElementById('result');
 
-themeToggleButton.addEventListener('click', () => {
-  body.classList.toggle('dark-mode');
+generateButton.addEventListener('click', () => {
+  const numbers = new Set();
+  while (numbers.size < 6) {
+    const randomNumber = Math.floor(Math.random() * 45) + 1;
+    numbers.add(randomNumber);
+  }
+  
+  resultDiv.textContent = Array.from(numbers).join(', ');
 });
